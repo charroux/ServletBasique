@@ -1,10 +1,13 @@
 package web;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import model.Person;
 
 
 public class AddPersonServlet extends HttpServlet {
@@ -22,8 +25,11 @@ public class AddPersonServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name = request.getParameter("name");
-		String age = request.getParameter("age");
+		String a = request.getParameter("age");
+		int age = Integer.parseInt(a);
 		System.out.println("name="+name + " age=" + age);
+		request.setAttribute("person", new Person(name, age));
+		request.getRequestDispatcher("/confirmation.jsp").forward(request, response);
 	}
 
 }

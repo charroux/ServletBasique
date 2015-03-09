@@ -13,6 +13,19 @@
   	<url-pattern>/addPersonURL</url-pattern>
   </servlet-mapping>
   
+  
+    <servlet>
+	  	<servlet-name>otherServlet</servlet-name>
+	  	<servlet-class>web.OtherServlet</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	  	<servlet-name>otherServlet</servlet-name>
+	  	<url-pattern>/otherServlet</url-pattern>
+	  </servlet-mapping>
+  
+  
+  
   <welcome-file-list>
   	<welcome-file>index.html</welcome-file>
   </welcome-file-list>
